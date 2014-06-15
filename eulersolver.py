@@ -1,15 +1,21 @@
 class EulerSolver():
-    """
-    Multiples of 3 and 5
-    Problem 1
-    If we list all the natural numbers below 10 that are multiples of 3 or 5,
-    we get 3, 5, 6 and 9. The sum of these multiples is 23.
-    Find the sum of all the multiples of 3 or 5 below 1000.
-    """
     def __init__(self):
         pass
 
-    def solve(self):
+    def solve(self, problem):
+        if problem == 1:
+            return self.solve_problem_one()
+        else:
+            return 0
+
+    def solve_problem_one(self):
+        """
+        Multiples of 3 and 5
+        Problem 1
+        If we list all the natural numbers below 10 that are multiples of 3 or 5,
+        we get 3, 5, 6 and 9. The sum of these multiples is 23.
+        Find the sum of all the multiples of 3 or 5 below 1000.
+        """
         return self.find_sum_of_multiples(1000, [3, 5])
 
     def find_sum_of_multiples(self, limit, numbers):

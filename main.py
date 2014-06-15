@@ -2,8 +2,8 @@ import eulersolver
 
 
 def main():
-    first = eulersolver.EulerSolver()
-    result = first.solve()
+    solver = eulersolver.EulerSolver()
+    result = solver.solve(1)
 
     print('Result from problem one is {}'.format(result))
 
