@@ -1,8 +1,8 @@
-import onesolver
+import eulersolver
 
 
 def main():
-    first = onesolver.OneSolver()
+    first = eulersolver.EulerSolver()
     result = first.solve()
 
     print('Result from problem one is {}'.format(result))
