@@ -24,3 +24,30 @@ class EulerSolverTestCase(unittest.TestCase):
 
         self.assertEqual(result, 23)
 
+    def test_find_all_fibonacci_terms_less_than_1_should_be_1(self):
+        solver = eulersolver.EulerSolver()
+
+        result = solver.find_all_fibonacci_terms_less_than(1)
+
+        self.assertEqual(list(result), [1])
+
+    def test_find_all_fibonacci_terms_less_than_3_should_be_1_2(self):
+        solver = eulersolver.EulerSolver()
+
+        result = solver.find_all_fibonacci_terms_less_than(3)
+
+        self.assertEqual(list(result), [1, 2])
+
+    def test_find_all_fibonacci_terms_less_than_10_should_be_1_2_3_5_8(self):
+        solver = eulersolver.EulerSolver()
+
+        result = solver.find_all_fibonacci_terms_less_than(10)
+
+        self.assertEqual(list(result), [1, 2, 3, 5, 8])
+
+    def test_find_all_fibonacci_terms_less_than_400000000_should_not_take_long(self):
+        solver = eulersolver.EulerSolver()
+
+        result = solver.find_all_fibonacci_terms_less_than(400000000)
+
+        print(list(result))
