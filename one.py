@@ -1,4 +1,3 @@
-
 class One():
     """
     Multiples of 3 and 5
@@ -14,15 +13,14 @@ class One():
         return self.find_sum_of_multiples(1000, [3, 5])
 
     def find_sum_of_multiples(self, limit, numbers):
-
-        print('Finding the sum of a bunch of multiples!')
-
-        total_sum = sum(self.__find_all_divisible_in_range(limit, numbers))
+        total_sum = sum(self.find_all_divisible_in_range(limit, numbers))
         return total_sum
 
-    def __find_all_divisible_in_range(self, limit, numbers):
+    def find_all_divisible_in_range(self, limit, numbers):
+        def is_multiple_of(numerator):
+            return lambda denominator: numerator % denominator == 0
+
         for current in range(1, limit):
-            divisible = map(lambda number: current % number == 0, numbers)
-            if any(divisible):
-                print(current, end=' ')
+            multiple = map(is_multiple_of(current), numbers)
+            if any(multiple):
                 yield current
