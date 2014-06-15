@@ -1,4 +1,4 @@
-class One():
+class OneSolver():
     """
     Multiples of 3 and 5
     Problem 1

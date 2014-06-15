@@ -1,8 +1,8 @@
-import one
+import onesolver
 
 
 def main():
-    first = one.One()
+    first = onesolver.OneSolver()
     result = first.solve()
 
     print('Result from problem one is {}'.format(result))
