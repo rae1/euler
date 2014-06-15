@@ -1,8 +1,12 @@
 import one
 
+
 def main():
-    print('Hello, World!')
-    one.find_sum_of_multiples(1000, [3, 5])
+    first = one.One()
+    result = first.solve()
+
+    print('Result from problem one is {}'.format(result))
+
 
 if __name__ == '__main__':
     main()
