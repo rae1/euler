@@ -5,6 +5,8 @@ class EulerSolver():
     def solve(self, problem):
         if problem == 1:
             return self.solve_problem_one()
+        elif problem == 2:
+            return self.solve_problem_two()
         else:
             return 0
 
@@ -29,7 +31,7 @@ class EulerSolver():
         Find the sum of all the even-valued terms in the sequence
         which do not exceed four million.
         """
-        return self.find_sum_of_even_fibonacci_terms(1000, [3, 5])
+        return self.find_sum_of_even_fibonacci_terms(4000000)
 
     def find_sum_of_multiples(self, limit, numbers):
         total_sum = sum(self.find_all_divisible_in_range(limit, numbers))
@@ -48,21 +50,21 @@ class EulerSolver():
         return sum(self.find_all_fibonacci_terms_less_than(limit, lambda term: term % 2 == 0))
 
     def find_all_fibonacci_terms_less_than(self, limit, filter_func=lambda term: True):
-        previous, current = 1, 1
+        previous_term, current_term = 1, 1
         matching_terms = []
 
-        if filter_func(previous):
-            matching_terms.append(previous)
+        if filter_func(previous_term):
+            matching_terms.append(previous_term)
 
-        if filter_func(current):
-            matching_terms.append(current)
+        if filter_func(current_term):
+            matching_terms.append(current_term)
 
         next_term = 0
         while next_term < limit:
-            next_term = current + previous
+            next_term = current_term + previous_term
             if next_term < limit and filter_func(next_term):
                 matching_terms.append(next_term)
-            previous = current
-            current = next_term
+            previous_term = current_term
+            current_term = next_term
 
         return matching_terms
