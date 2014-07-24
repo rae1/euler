@@ -1,11 +1,17 @@
 import eulersolver
+import argparse
 
 
 def main():
-    solver = eulersolver.EulerSolver()
-    result = solver.solve(2)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--problem', type=int, help='Number of problem to solve', default=1)
+    args = parser.parse_args()
 
-    print('Result from problem one is {}'.format(result))
+    problem_number = args.problem
+    solver = eulersolver.EulerSolver()
+    problem_result = solver.solve(problem_number)
+
+    print('Result from problem {} is: {}'.format(problem_number, problem_result))
 
 
 if __name__ == '__main__':
