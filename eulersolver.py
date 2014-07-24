@@ -47,11 +47,22 @@ class EulerSolver():
     def find_sum_of_even_fibonacci_terms(self, limit):
         pass
 
-    def find_all_fibonacci_terms_less_than(self, limit):
-        terms = [1]
+    def find_all_fibonacci_terms_less_than(self, limit, filter_func=lambda term: True):
+        previous, current = 1, 1
+        matching_terms = []
+
+        if filter_func(previous):
+            matching_terms.append(previous)
+
+        if filter_func(current):
+            matching_terms.append(current)
+
         next_term = 0
         while next_term < limit:
-            next_term = terms[-1] + (terms[-2] if len(terms) != 1 else 1)
-            if next_term < limit:
-                terms.append(next_term)
-        return terms
+            next_term = current + previous
+            if next_term < limit and filter_func(next_term):
+                matching_terms.append(next_term)
+            previous = current
+            current = next_term
+
+        return matching_terms
