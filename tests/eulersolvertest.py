@@ -52,9 +52,20 @@ class EulerSolverTestCase(unittest.TestCase):
 
         self.assertEqual(list(result), [2, 8])
 
-    def test_find_all_fibonacci_terms_less_than_400000000_should_not_take_long(self):
+    def test_find_all_fibonacci_terms_less_than_4000000_should_not_take_long(self):
         solver = eulersolver.EulerSolver()
 
-        result = solver.find_all_fibonacci_terms_less_than(400000000)
+        result = solver.find_all_fibonacci_terms_less_than(4000000)
 
-        print(list(result))
+        print(result)
+        print(len(result))
+
+    def test_find_sum_of_even_fibonacci_terms_less_than_4000000(self):
+        solver = eulersolver.EulerSolver()
+        limit = 4000000
+
+        result = solver.find_sum_of_even_fibonacci_terms(limit)
+
+        self.assertEqual(result, 4613732)
+        print(result)
+

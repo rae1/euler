@@ -45,7 +45,7 @@ class EulerSolver():
                 yield current
 
     def find_sum_of_even_fibonacci_terms(self, limit):
-        pass
+        return sum(self.find_all_fibonacci_terms_less_than(limit, lambda term: term % 2 == 0))
 
     def find_all_fibonacci_terms_less_than(self, limit, filter_func=lambda term: True):
         previous, current = 1, 1
