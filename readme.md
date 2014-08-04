@@ -1,1 +1,1 @@
-**[euler](https://projecteuler.net)**, python-flavored.
+**[euler](https://projecteuler.net)**, pythonized.
